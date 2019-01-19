@@ -1,8 +1,9 @@
 package com.trx;
 
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class TransactionParserTest {
 
@@ -11,11 +12,11 @@ public class TransactionParserTest {
         TransactionParser parser = new TransactionParser();
         Transaction trx = parser.parse("John,Doe,john@doe.com,30,TR000");
 
-        Assert.assertEquals("John", trx.getFirstName());
-        Assert.assertEquals("Doe", trx.getSurname());
-        Assert.assertEquals("john@doe.com", trx.getMail());
-        Assert.assertEquals(30, trx.getAmount());
-        Assert.assertEquals("TR000", trx.getTransactionID());
+        Assertions.assertEquals("John", trx.getFirstName());
+        Assertions.assertEquals("Doe", trx.getSurname());
+        Assertions.assertEquals("john@doe.com", trx.getMail());
+        Assertions.assertEquals(30, trx.getAmount());
+        Assertions.assertEquals("TR000", trx.getTransactionID());
     }
 
     @Test
@@ -26,7 +27,7 @@ public class TransactionParserTest {
 
         boolean durum = trx.isEnough(myAmount);
 
-        Assert.assertFalse(durum);
+        Assertions.assertFalse(durum);
 
     }
 }
